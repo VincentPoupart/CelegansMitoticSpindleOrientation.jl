@@ -1,4 +1,4 @@
-module CelegensMitoticSpindleOrientation
+module CelegansMitoticSpindleOrientation
 
 using DataFrames
 using CSV
