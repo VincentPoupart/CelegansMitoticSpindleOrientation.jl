@@ -1,4 +1,4 @@
-using CelegensMitoticSpindleOrientation
+using CelegansMitoticSpindleOrientation
 using Test
 
 @testset "CelegensMitoticSpindleOrientation.jl" begin
