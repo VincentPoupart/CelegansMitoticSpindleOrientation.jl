@@ -1,6 +1,7 @@
-using CelegansMitoticSpindleOrientation
+using CelegensMitoticSpindleOrientation
 using Test
 
-@testset "CelegansMitoticSpindleOrientation.jl" begin
+@testset "CelegensMitoticSpindleOrientation.jl" begin
     # Write your tests here.
+    1 === 1
 end
