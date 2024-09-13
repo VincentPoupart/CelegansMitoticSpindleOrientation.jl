@@ -12,6 +12,7 @@ using GLMakie
 using HypothesisTests
 using SwarmMakie
 using PlotlyJS
+using IterTools
 
 export
     SpindleOrientationCellShape,

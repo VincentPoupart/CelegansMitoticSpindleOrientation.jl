@@ -21,7 +21,6 @@ function take(lines)
             push!(result, line)
         else
             push!(result, line)
-            println(line)
             break
         end
     end

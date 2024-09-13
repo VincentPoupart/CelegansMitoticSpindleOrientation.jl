@@ -21,9 +21,9 @@ function NormalVector2MitosisDict!(Mitosis_dict, wrlfilelist; algorythm="Growing
             end
             if Gonad_df == GonadWRL
                 if algorythm == "GrowingSphere"
-                    Mitosis_dict[k[i]] = AddAnglesGrowingSphereMitosis(Mitosis_dict[k[i]], IndexedFaceSets)
+                    Mitosis_dict[k[i]] = AddAnglesGrowingSphereMitosis!(Mitosis_dict[k[i]], IndexedFaceSets)
                 elseif algorythm == "First50um"
-                    Mitosis_dict[k[i]] = AddAnglesFirst50umMitosis(Mitosis_dict[k[i]], IndexedFaceSets)
+                    Mitosis_dict[k[i]] = AddAnglesFirst50umMitosis!(Mitosis_dict[k[i]], IndexedFaceSets)
                 end
             end
         end
@@ -33,7 +33,7 @@ function NormalVector2MitosisDict!(Mitosis_dict, wrlfilelist; algorythm="Growing
 end
 
 
-function AddAnglesFirst50umMitosis(fazer::DataFrame, IndexedFaceSets)
+function AddAnglesFirst50umMitosis!(fazer::DataFrame, IndexedFaceSets)
     NormalsX = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     NormalsY = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     NormalsZ = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
@@ -69,7 +69,7 @@ function AddAnglesFirst50umMitosis(fazer::DataFrame, IndexedFaceSets)
     return fazer
 end
 
-function AddAnglesGrowingSphereMitosis(fazer::DataFrame, IndexedFaceSets)
+function AddAnglesGrowingSphereMitosis!(fazer, IndexedFaceSets)
     fazer[!, :XNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     fazer[!, :YNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     fazer[!, :ZNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
