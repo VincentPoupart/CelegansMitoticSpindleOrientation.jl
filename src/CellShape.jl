@@ -1,6 +1,6 @@
 ######## Fetch Data from Imaris
 
-function FetchImarisStats(filelist::Vector{String}, DTC)
+function FetchImarisStats(filelist::Vector{String}, DTC, DPaxis)
     Cell_Ellipsoid_Axis_C_df = DataFrame()
     Cell_Ellipsoid_Axis_B_df = DataFrame()
     Cell_Ellipsoid_Axis_A_df = DataFrame()

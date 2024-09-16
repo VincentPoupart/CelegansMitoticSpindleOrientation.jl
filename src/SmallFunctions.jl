@@ -519,7 +519,7 @@ function CreateInterphaseCellsDF(filtered_df)
     return InterphaseCellsDF
 end
 
-function AddDPaxisData(df)
+function AddDPaxisData(df, DPaxis)
     df[!, :DPaxisX] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisY] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisZ] = Vector{Union{Missing,Float64}}(undef, nrow(df))
@@ -549,7 +549,7 @@ function AddDPaxisData(df)
     return df
 end
 
-function AddDPaxisData(df)
+function AddDPaxisMitosis!(df, DPaxis)
     df[!, :DPaxisX] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisY] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisZ] = Vector{Union{Missing,Float64}}(undef, nrow(df))
@@ -587,7 +587,7 @@ function AddDPaxisData(df)
     return df
 end
 
-function AddDPaxisDataInterphase(df)
+function AddDPaxisInterphase!(df, DPaxis)
     df[!, :DPaxisX] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisY] = Vector{Union{Missing,Float64}}(undef, nrow(df))
     df[!, :DPaxisZ] = Vector{Union{Missing,Float64}}(undef, nrow(df))

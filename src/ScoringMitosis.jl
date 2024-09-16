@@ -65,7 +65,7 @@ end
 
 #Running throughout the celloutput and scoring mitosis for each cells
 function ClickStepsMitosis(Celloutput::Dict)
-    GLMakie.activate!(; visible=true, focus_on_show=true, fullscreen = true, render_on_demand = true)
+    GLMakie.activate!(; visible=true, focus_on_show=true, fullscreen = false, render_on_demand = true)
     Scoring = Dict{String,DataFrame}()
     k = collect(keys(Celloutput))
     for i in eachindex(k)
@@ -102,3 +102,4 @@ function ClickStepsMitosis(Celloutput::Dict)
     scoring_df[!, :AnaphaseOnset] = AnaphaseOnset
     return scoring_df
 end
+

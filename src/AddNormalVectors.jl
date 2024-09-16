@@ -70,6 +70,7 @@ function AddAnglesFirst50umMitosis!(fazer::DataFrame, IndexedFaceSets)
 end
 
 function AddAnglesGrowingSphereMitosis!(fazer, IndexedFaceSets)
+    println(typeof(fazer))
     fazer[!, :XNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     fazer[!, :YNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
     fazer[!, :ZNormal] = Vector{Union{Float64,Missing}}(undef, length(fazer[!, :FRAME]))
@@ -143,7 +144,7 @@ function NormalVector2InterphaseDF!(Interphase_df, wrlfilelist; algorythm="Growi
             end
             if Gonad_df == GonadWRL
                 if algorythm == "GrowingSphere"
-                    Interphase_df[i, :] = AddAnglesGrowingSphereMitosis!(Interphase_df[i, :], IndexedFaceSets)
+                    Interphase_df[i, :] = AddAnglesGrowingSphereInterphase!(Interphase_df[i, :], IndexedFaceSets)
                 elseif algorythm == "First50um"
                     Interphase_df[i, :] = AddAnglesFirst50umInterphase!(Interphase_df[i, :], IndexedFaceSets)
                 end

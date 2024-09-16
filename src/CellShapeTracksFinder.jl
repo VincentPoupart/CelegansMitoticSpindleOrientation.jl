@@ -1,5 +1,5 @@
 ### Function to add cell shape data and mitotic steps to celloutput
-function FindCellShapeTracksAndMitotiocSteps(Celloutput, CellShape, scoring_df)
+function FindCellShapeTracksAndMitoticSteps(Celloutput, CellShape, scoring_df, DPaxis)
     if hasproperty(Celloutput, :CellVolume) == false
         Celloutput[!, :TrackID] = Vector{Union{Missing,Float64}}(undef, nrow(Celloutput))
         Celloutput[!, :CellShapeTrackID] = Vector{Vector{Union{Missing,Float64}}}(undef, nrow(Celloutput))
