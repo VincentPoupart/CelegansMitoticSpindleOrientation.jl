@@ -51,22 +51,6 @@ function ZipfileList(filelist::Vector{String}, ends::String)
     return filter(x -> endswith(x, "$(ends).zip"), filelist)
 end
 
-function FetchDPaxis(filelist::Vector{String})
-    DPaxis = Dict()
-    for i in eachindex(filelist)
-        if contains(filelist2[i], "_DPaxis.csv")
-            movie = RemoveExt(basename(filelist[i]), "_DPaxis.csv")
-            df = DataFrame(CSV.File(filelist[i]))
-            select!(df, [:x1, :x2, :y1, :y2, :z1, :z2])
-            df.X .= df[!, :x1] .- df[!, :x2]
-            df.Y .= df[!, :y1] .- df[!, :y2]
-            df.Z .= df[!, :z1] .- df[!, :z2]
-            DPaxis[movie] = df
-        end
-    end
-    return DPaxis
-end
-
 function FetchDTC(filelist::Vector{String})
     DTC = Dict()
     for i in eachindex(filelist)
